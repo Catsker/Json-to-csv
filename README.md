@@ -60,10 +60,10 @@ Generate a mock JSON array file according to a schema template:
 
 ```bash
 # Using default options (or values from .env)
-catker-json-to-csv generate
+catsker-jsontocsv generate
 
 # Custom target size (e.g., 0.01 GB / ~10MB) and output path
-catker-json-to-csv generate --size 0.01 --output ./data/sample.json --template ./my-template.json
+catsker-jsontocsv generate --size 0.01 --output ./data/sample.json --template ./my-template.json
 ```
 
 **Options:**
@@ -77,10 +77,10 @@ catker-json-to-csv generate --size 0.01 --output ./data/sample.json --template .
 Stream-convert the generated JSON file to CSV:
 
 ```bash
-catker-json-to-csv convert
+catsker-jsontocsv convert
 
 # Custom input/output paths and separator
-catker-json-to-csv convert --input ./data/sample.json --output ./data/result.csv --separator ";"
+catsker-jsontocsv convert --input ./data/sample.json --output ./data/result.csv --separator ";"
 ```
 
 **Options:**
@@ -94,10 +94,10 @@ catker-json-to-csv convert --input ./data/sample.json --output ./data/result.csv
 Upload the converted CSV file to Google Drive:
 
 ```bash
-catker-json-to-csv upload
+catsker-jsontocsv upload
 
 # Custom file and folder target
-catker-json-to-csv upload --file ./data/result.csv --folder 1A2b3C4d5E6f7G8h9I0j
+catsker-jsontocsv upload --file ./data/result.csv --folder 1A2b3C4d5E6f7G8h9I0j
 ```
 
 **Options:**
