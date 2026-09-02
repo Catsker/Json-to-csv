@@ -52,7 +52,6 @@ async function uploadToGoogleDrive(filePath, folderId = process.env.GOOGLE_DRIVE
     });
 
     console.log(`The file uploaded successfully!`);
-    console.log(`File ID: ${response.data.id}`);
     console.log(`Link: ${response.data.webViewLink}`);
 
     return response.data.id;

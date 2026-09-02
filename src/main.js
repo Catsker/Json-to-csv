@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const path = require('path');
 const fs = require('fs');
 require('dotenv').config();
@@ -18,8 +20,8 @@ program
     .command('generate')
     .description('Generation of the big JSON-file based on the example')
     .option('-s, --size <gb>', 'File size in GB', process.env.TARGET_SIZE_GB || '10')
-    .option('-t, --template <path>', 'Path to the template', process.env.TEMPLATE_PATH || 'assets/test.json')
-    .option('-o, --output <path>', 'Path to save', process.env.SOURCE_PATH || 'assets/source.json')
+    .option('-t, --template <path>', 'Path to the template', process.env.TEMPLATE_PATH || path.join(__dirname, '../assets/test.json'))
+    .option('-o, --output <path>', 'Path to save', process.env.SOURCE_PATH || path.join(process.cwd(), 'source.json'))
     .action(async (options) => {
         try {
             const absoluteTemplatePath = path.resolve(options.template);
@@ -51,12 +53,14 @@ program
 
 program
     .command('convert')
-    .description('Convertation JSON to CSV')
+    .description('Convert JSON to CSV')
     .option('-s, --separator <char>', 'Separator', ',')
+    .option('-i, --input <path>', 'Input JSON path', process.env.SOURCE_PATH || path.join(process.cwd(), 'source.json'))
+    .option('-o, --output <path>', 'Output CSV path', process.env.RESULT_PATH || path.join(process.cwd(), 'result.csv'))
     .action(async (options) => {
         try {
-            const absoluteSource = path.resolve(process.env.SOURCE_PATH);
-            const absoluteResult = path.resolve(process.env.RESULT_PATH);
+            const absoluteSource = path.resolve(options.input);
+            const absoluteResult = path.resolve(options.output);
 
             console.log('--- START CONVERTATION ---');
             const startTime = Date.now();
@@ -73,9 +77,9 @@ program
 
 program
     .command('upload')
-    .description('Upload generated CSV-file to the Google Drive')
-    .option('-f, --file <path>', 'Path to the file', process.env.RESULT_PATH || 'assets/result.csv')
-    .option('-F, --folder <id>', 'Folder ID to the Google Drive', process.env.GOOGLE_DRIVE_FOLDER_ID)
+    .description('Upload generated CSV-file to Google Drive')
+    .option('-f, --file <path>', 'Path to the file', process.env.RESULT_PATH || path.join(process.cwd(), 'result.csv'))
+    .option('-F, --folder <id>', 'Folder ID on Google Drive', process.env.GOOGLE_DRIVE_FOLDER_ID)
     .action(async (options) => {
         try {
             console.log('--- START UPLOADING TO THE GOOGLE DRIVE ---');
