@@ -1,5 +1,5 @@
 {
-  "name": "catker-jsontocsv",
+  "name": "catsker-jsontocsv",
   "version": "1.0.0",
   "description": "A robust, memory-efficient Node.js CLI utility designed for generating, converting, and uploading gigabyte-sized JSON files to Google Drive without loading entire datasets into memory.",
   "main": "src/main.js",
