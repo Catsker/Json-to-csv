@@ -1,4 +1,4 @@
-# Catker JSON to CSV CLI Tool
+# JSON to CSV CLI Tool
 
 A robust, memory-efficient Node.js CLI utility designed for generating, converting, and uploading gigabyte-sized JSON files to Google Drive without loading entire datasets into memory.
 
@@ -20,7 +20,7 @@ Built with **zero external dependencies** for JSON stream parsing, ensuring low 
 
 ### Global Installation (CLI Utility)
 ```bash
-npm install -g catker-json-to-csv
+npm install -g catsker-jsontocsv
 ```
 
 ### Local Development / Repository Setup
