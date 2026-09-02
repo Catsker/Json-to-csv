@@ -1,0 +1,30 @@
+{
+  "name": "catker-json-to-csv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "generate": "node src/main.js generate",
+    "generate:small": "node src/main.js generate --size 0.01",
+    "convert": "node src/main.js convert",
+    "upload": "node src/main.js upload"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Catsker/Json-to-csv.git"
+  },
+  "keywords": [],
+  "author": "Pavel Kazarenka",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Catsker/Json-to-csv/issues"
+  },
+  "homepage": "https://github.com/Catsker/Json-to-csv#readme",
+  "dependencies": {
+    "commander": "^15.0.0",
+    "dotenv": "^17.4.2",
+    "googleapis": "^178.0.0"
+  }
+}
