@@ -4,7 +4,7 @@
   "description": "A robust, memory-efficient Node.js CLI utility designed for generating, converting, and uploading gigabyte-sized JSON files to Google Drive without loading entire datasets into memory.",
   "main": "src/main.js",
   "bin": {
-    "catker-json-to-csv": "src/main.js"
+    "catsker-jsontocsv": "src/main.js"
   },
   "scripts": {
     "start": "node src/main.js",
