@@ -42,7 +42,6 @@ module.exports = async function uploaderAction(options) {
         const duration = ((Date.now() - startTime) / 1000).toFixed(2);
 
         console.log(`Uploading completed in ${duration} sec!`);
-        console.log(`File ID: ${fileData.id}`);
         console.log(`Direct Link: ${fileData.webViewLink}`);
         if (folderId) {
             console.log(`Target Folder: https://drive.google.com/drive/folders/${folderId}`);
